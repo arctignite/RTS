@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectMinion : MonoBehaviour {
+public class SelectBuilding : MonoBehaviour {
 
-    private bool mouseOver;
+    public bool mouseOver;
     private ObjectSelector selector;
 
     private void Start()
@@ -13,15 +13,16 @@ public class SelectMinion : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (mouseOver)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                selector.SelectMinion(gameObject);
+                selector.SelectBuilding(gameObject);
             }
-        }		
-	}
+        }
+    }
 
     private void OnMouseEnter()
     {

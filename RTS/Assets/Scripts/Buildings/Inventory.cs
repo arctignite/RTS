@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour {
     [SerializeField] private float reservedWood;
     [SerializeField] private float reservedStone;
 
+    [SerializeField] private string name;
+
     private TotalInventory totalInventory;
     private string tagSelf;
 
@@ -17,6 +19,7 @@ public class Inventory : MonoBehaviour {
     {
         totalInventory = GameObject.FindWithTag("GameManager").GetComponent<TotalInventory>();
         tagSelf = transform.tag;
+        name = gameObject.name;
     }
 
     public float GetWood()
@@ -43,7 +46,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public float getStone()
+    public float GetStone()
     {
         return stone;
     }
@@ -60,5 +63,10 @@ public class Inventory : MonoBehaviour {
     {
         reservedWood -= _resources.GetWood();
         reservedStone -= _resources.GetStone();
+    }
+
+    public string GetName()
+    {
+        return name;
     }
 }

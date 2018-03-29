@@ -6,6 +6,8 @@ public class WorkerStats : MonoBehaviour {
 
     [SerializeField] private float wood;
     [SerializeField] private float stone;
+    [SerializeField] private string name;
+    private int minionType;
 
     [SerializeField] private float movementSpeed = 2;
     [SerializeField] private float productivity = 1;
@@ -85,5 +87,15 @@ public class WorkerStats : MonoBehaviour {
     public void SetProductivity(float _productivity)
     {
         productivity = _productivity;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetMinionType(int _minionType)
+    {
+        minionType = _minionType;
     }
 }
