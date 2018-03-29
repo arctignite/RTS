@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 68978884bf775e14d87e89807bcf7be4
+timeCreated: 1521586192
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - modelConstruct: {instanceID: 0}
+  - modelFinished: {instanceID: 0}
+  - materialWood: {instanceID: 0}
+  - materialStone: {instanceID: 0}
+  - border: {instanceID: 0}
+  - building: {instanceID: 0}
+  - transparantModel: {instanceID: 0}
+  - borderColor: {fileID: 2100000, guid: fe50983deba519f448f877eefba318e8, type: 2}
+  - borderColorWrong: {fileID: 2100000, guid: 1c05d10604b8bd1409dfcef2856596c2, type: 2}
+  - taskManager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
