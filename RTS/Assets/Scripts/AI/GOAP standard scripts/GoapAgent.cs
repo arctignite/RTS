@@ -20,6 +20,9 @@ public sealed class GoapAgent : MonoBehaviour
 
     private GoapPlanner planner;
 
+    private HashSet<KeyValuePair<string, object>> oldWorldState = null;
+    private HashSet<KeyValuePair<string, object>> oldGoal = null;
+
 
     void Start()
     {
@@ -76,6 +79,8 @@ public sealed class GoapAgent : MonoBehaviour
             HashSet<KeyValuePair<string, object>> worldState = dataProvider.getWorldState();
             HashSet<KeyValuePair<string, object>> goal = dataProvider.createGoalState();
 
+            Debug.Log(prettyPrint(worldState));
+
             // Plan
             Queue<GoapAction> plan = planner.plan(gameObject, availableActions, worldState, goal);
             if (plan != null)
@@ -96,7 +101,7 @@ public sealed class GoapAgent : MonoBehaviour
                 fsm.popState(); // move back to IdleAction state
                 fsm.pushState(idleState);
             }
-
+            
         };
     }
 

@@ -12,20 +12,13 @@ using System.Collections.Generic;
 public abstract class Minion : MonoBehaviour, IGoap
 {
     public InventoryComponent inventory;
-    public float moveSpeed = 1;
+    public float moveSpeed;
 
 
     void Start()
     {
-        if (inventory == null)
-            inventory = gameObject.AddComponent<InventoryComponent>();
-        /*if (inventory.tool == null)
-        {
-            GameObject prefab = Resources.Load<GameObject>(inventory.toolType);
-            GameObject tool = Instantiate(prefab, transform.position, transform.rotation) as GameObject;
-            inventory.tool = tool;
-            tool.transform.parent = transform; // attach the tool
-        }*/
+        inventory = GetComponent<InventoryComponent>();
+        moveSpeed = GetComponent<MinionStatsComponent>().movementSpeed;
     }
 
 
@@ -41,10 +34,8 @@ public abstract class Minion : MonoBehaviour, IGoap
     {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
 
-        worldData.Add(new KeyValuePair<string, object>("hasOre", (inventory.numOre > 0)));
-        worldData.Add(new KeyValuePair<string, object>("hasLogs", (inventory.numLogs > 0)));
-        worldData.Add(new KeyValuePair<string, object>("hasFirewood", (inventory.numFirewood > 0)));
-        worldData.Add(new KeyValuePair<string, object>("hasTool", (inventory.tool != null)));
+        worldData.Add(new KeyValuePair<string, object>("hasStone", (inventory.numStone > 0)));
+        worldData.Add(new KeyValuePair<string, object>("hasWood", (inventory.numWood > 0)));
 
         return worldData;
     }

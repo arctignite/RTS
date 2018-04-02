@@ -6,10 +6,6 @@ using System.Collections;
  */
 public class InventoryComponent : MonoBehaviour
 {
-    public GameObject tool;
-    public int numLogs;
-    public int numFirewood;
-    public int numOre;
-    public string toolType = "ToolAxe";
-
+    public int numWood;
+    public int numStone;
 }

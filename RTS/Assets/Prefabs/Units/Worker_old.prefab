@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 114212270831845714}
   - component: {fileID: 114905708681559390}
   m_Layer: 10
-  m_Name: Worker
+  m_Name: Worker_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,6 +2946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00b4416669ba7045b1717866d118863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasTask: 0
+  taskInitiated: 0
 --- !u!114 &114593505754679246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2959,6 +2961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 0
   stone: 0
+  name: 
   movementSpeed: 2
   productivity: 1
 --- !u!114 &114624392527722338
