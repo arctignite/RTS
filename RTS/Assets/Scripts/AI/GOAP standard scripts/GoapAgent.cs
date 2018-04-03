@@ -20,10 +20,6 @@ public sealed class GoapAgent : MonoBehaviour
 
     private GoapPlanner planner;
 
-    private HashSet<KeyValuePair<string, object>> oldWorldState = null;
-    private HashSet<KeyValuePair<string, object>> oldGoal = null;
-
-
     void Start()
     {
         stateMachine = new FSM();
@@ -126,21 +122,6 @@ public sealed class GoapAgent : MonoBehaviour
                 fsm.popState();
             }
 
-            /*MovableComponent movable = (MovableComponent) gameObj.GetComponent(typeof(MovableComponent));
-			if (movable == null) {
-				Debug.Log("<color=red>Fatal error:</color> Trying to move an Agent that doesn't have a MovableComponent. Please give it one.");
-				fsm.popState(); // move
-				fsm.popState(); // perform
-				fsm.pushState(idleState);
-				return;
-			}
-			float step = movable.moveSpeed * Time.deltaTime;
-			gameObj.transform.position = Vector3.MoveTowards(gameObj.transform.position, action.target.transform.position, step);
-			if (gameObj.transform.position.Equals(action.target.transform.position) ) {
-				// we are at the target location, we are done
-				action.setInRange(true);
-				fsm.popState();
-			}*/
         };
     }
 
